@@ -3,7 +3,7 @@
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import LogoMark from "./LogoMark";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "@/components/animations/motion-tokens";
 
 export default function Reserve() {
   const ref = useRef<HTMLElement>(null);

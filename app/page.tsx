@@ -1,29 +1,18 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Pillars from "@/components/Pillars";
-import Dishes from "@/components/Dishes";
-import About from "@/components/About";
-import Reserve from "@/components/Reserve";
-import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
-import CustomCursor from "@/components/CustomCursor";
-import PageIntro from "@/components/PageIntro";
+import Link from "next/link";
 
-export default function Page() {
+// Plain unstyled index of brand pages. Styling will come later.
+export default function IndexPage() {
   return (
-    <>
-      <PageIntro />
-      <ScrollProgress />
-      <CustomCursor />
-      <Nav />
-      <main id="main">
-        <Hero />
-        <Pillars />
-        <Dishes />
-        <About />
-        <Reserve />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <h1>Brand pages</h1>
+      <ul>
+        <li>
+          <Link href="/grove-and-grain">Grove &amp; Grain</Link>
+        </li>
+        <li>
+          <Link href="/keymaster-24">Keymaster 24</Link>
+        </li>
+      </ul>
+    </main>
   );
 }

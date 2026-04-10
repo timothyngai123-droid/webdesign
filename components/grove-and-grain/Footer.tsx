@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import LogoMark from "./LogoMark";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "@/components/animations/motion-tokens";
 
 const linkClass =
   "relative text-cream-light hover:text-cream-bg transition-colors duration-150 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-cream-bg after:origin-left after:transition-[width] after:duration-200 hover:after:w-full";

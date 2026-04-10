@@ -1,9 +1,10 @@
 "use client";
 
-import FadeUp from "./animations/FadeUp";
-import StaggerContainer from "./animations/StaggerContainer";
-import StaggerItem from "./animations/StaggerItem";
-import DrawIcon from "./animations/DrawIcon";
+import FadeUp from "@/components/animations/FadeUp";
+import StaggerContainer, {
+  StaggerItem,
+} from "@/components/animations/StaggerContainer";
+import DrawIcon from "@/components/animations/DrawIcon";
 
 type Pillar = {
   numeral: string;

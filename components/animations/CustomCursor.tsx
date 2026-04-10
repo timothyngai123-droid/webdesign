@@ -8,16 +8,29 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 
+type CustomCursorProps = {
+  /** Tailwind class (or any class) controlling the dot colour. */
+  className?: string;
+  /** Resting diameter in px. Defaults to 10. */
+  size?: number;
+  /** Diameter when hovering an interactive element. Defaults to 26. */
+  hoverSize?: number;
+  /** Opacity applied to the dot when hovering. Defaults to 0.4. */
+  hoverOpacity?: number;
+};
+
 /**
- * A small green dot that follows the cursor on fine-pointer devices,
- * with a slight spring lag and a "magnetic" expand on interactive
- * elements (anything with `[data-cursor="magnetic"]`, or buttons/links).
- *
- * - Hidden entirely on touch devices (no `pointer: fine`)
- * - Hidden when `prefers-reduced-motion: reduce`
- * - Hides the native cursor via a `body.custom-cursor-active` class
+ * Brand-agnostic custom cursor. Consumers pass the dot colour via
+ * `className`. Only renders on devices with `pointer: fine`, and is
+ * a no-op when `prefers-reduced-motion` is set. Hides the native
+ * cursor by toggling a `custom-cursor-active` class on `body`.
  */
-export default function CustomCursor() {
+export default function CustomCursor({
+  className = "bg-black",
+  size = 10,
+  hoverSize = 26,
+  hoverOpacity = 0.4,
+}: CustomCursorProps) {
   const reduceMotion = useReducedMotion();
   const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -75,11 +88,11 @@ export default function CustomCursor() {
       }}
     >
       <motion.div
-        className="rounded-full bg-green-mid"
+        className={`rounded-full ${className}`}
         animate={{
-          width: hovering ? 26 : 10,
-          height: hovering ? 26 : 10,
-          opacity: hovering ? 0.4 : 1,
+          width: hovering ? hoverSize : size,
+          height: hovering ? hoverSize : size,
+          opacity: hovering ? hoverOpacity : 1,
         }}
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
       />

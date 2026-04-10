@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import FadeUp from "./animations/FadeUp";
-import StaggerContainer from "./animations/StaggerContainer";
-import StaggerItem from "./animations/StaggerItem";
-import { EASE_OUT } from "./animations/motion-tokens";
+import FadeUp from "@/components/animations/FadeUp";
+import StaggerContainer, {
+  StaggerItem,
+} from "@/components/animations/StaggerContainer";
+import { EASE_OUT } from "@/components/animations/motion-tokens";
 
 // PLACEHOLDER CONTENT: sample weekly menu — replace with real dishes before launch.
 const dishes = [

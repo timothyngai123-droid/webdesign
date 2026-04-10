@@ -1,7 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
-import { STAGGER } from "./motion-tokens";
+import {
+  motion,
+  useReducedMotion,
+  type HTMLMotionProps,
+} from "framer-motion";
+import { STAGGER, DURATION, EASE_OUT } from "./motion-tokens";
 
 type StaggerContainerProps = HTMLMotionProps<"div"> & {
   stagger?: number;
@@ -9,9 +13,9 @@ type StaggerContainerProps = HTMLMotionProps<"div"> & {
 };
 
 /**
- * Container that staggers its `FadeUp` (or other variant-aware) children
- * on scroll entry. Children must use `variants` named `hidden`/`visible`
- * — `StaggerItem` below satisfies this contract.
+ * Container that staggers its `StaggerItem` children on scroll entry.
+ * Children should use the `hidden` / `visible` variants — the exported
+ * `StaggerItem` below satisfies this contract.
  */
 export default function StaggerContainer({
   children,
@@ -37,6 +41,34 @@ export default function StaggerContainer({
       }}
       {...rest}
     >
+      {children}
+    </motion.div>
+  );
+}
+
+type StaggerItemProps = HTMLMotionProps<"div"> & {
+  y?: number;
+};
+
+/**
+ * Child of `StaggerContainer`. Uses `hidden`/`visible` variants so it
+ * picks up its delay from the parent's `staggerChildren` transition.
+ */
+export function StaggerItem({ children, y = 32, ...rest }: StaggerItemProps) {
+  const reduceMotion = useReducedMotion();
+
+  const hidden = reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y };
+  const visible = {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: reduceMotion ? 0 : DURATION.enter,
+      ease: EASE_OUT,
+    },
+  };
+
+  return (
+    <motion.div variants={{ hidden, visible }} {...rest}>
       {children}
     </motion.div>
   );

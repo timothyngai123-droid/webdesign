@@ -3,9 +3,9 @@
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import LogoMark from "./LogoMark";
-import FadeUp from "./animations/FadeUp";
-import CountUp from "./animations/CountUp";
-import { EASE_OUT } from "./animations/motion-tokens";
+import FadeUp from "@/components/animations/FadeUp";
+import CountUp from "@/components/animations/CountUp";
+import { EASE_OUT } from "@/components/animations/motion-tokens";
 
 export default function About() {
   const quoteRef = useRef<HTMLDivElement>(null);
