@@ -8,14 +8,16 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <main>
+    <>
       <Nav />
-      <Hero />
-      <Pillars />
-      <Dishes />
-      <About />
-      <Reserve />
+      <main id="main">
+        <Hero />
+        <Pillars />
+        <Dishes />
+        <About />
+        <Reserve />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
