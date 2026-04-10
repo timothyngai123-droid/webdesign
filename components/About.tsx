@@ -1,12 +1,23 @@
+"use client";
+
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
 import LogoMark from "./LogoMark";
+import FadeUp from "./animations/FadeUp";
+import CountUp from "./animations/CountUp";
+import { EASE_OUT } from "./animations/motion-tokens";
 
 export default function About() {
+  const quoteRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(quoteRef, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
+
   return (
     <section id="about" className="bg-white py-20 md:py-32">
       <div className="max-w-content mx-auto px-6 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
           {/* PLACEHOLDER COPY: replace with real founder story before launch. */}
-          <div>
+          <FadeUp whenInView>
             <p className="eyebrow mb-6">
               <span>Our story</span>
             </p>
@@ -28,10 +39,24 @@ export default function About() {
             <p className="mt-8 font-display italic text-green-deep text-lg">
               &mdash; Eleanor &amp; James Whitcombe, founders
             </p>
-          </div>
+          </FadeUp>
 
-          <div className="relative">
-            <div className="relative bg-cream-bg border border-cream-border rounded-2xl p-10 md:p-14 overflow-hidden">
+          <FadeUp whenInView delay={0.15}>
+            <div
+              ref={quoteRef}
+              className="relative bg-cream-bg border border-cream-border rounded-2xl p-10 md:p-14 overflow-hidden"
+            >
+              {/* Growing left border */}
+              <motion.span
+                aria-hidden="true"
+                className="absolute left-0 top-0 w-[3px] bg-green-light origin-top"
+                initial={reduceMotion ? { height: "100%" } : { height: 0 }}
+                animate={inView ? { height: "100%" } : { height: 0 }}
+                transition={{
+                  duration: reduceMotion ? 0 : 0.6,
+                  ease: EASE_OUT,
+                }}
+              />
               <LogoMark className="absolute -right-8 -top-8 h-44 w-auto text-green-deep/5" />
               <div className="relative">
                 <svg
@@ -45,11 +70,12 @@ export default function About() {
                   <path d="M0 32V18C0 8 6 2 17 0l2 4c-7 2-10 6-10 12h9v16H0Zm23 0V18C23 8 29 2 40 0l2 4c-7 2-10 6-10 12h9v16H23Z" />
                 </svg>
                 <p className="font-display text-green-deep text-[clamp(1.75rem,4vw,2.6rem)] leading-[1.1] tracking-[-0.01em]">
-                  30 miles.
+                  <CountUp target={30} duration={1.2} /> miles.
                   <br />
                   That&apos;s as far as our
                   <br />
-                  ingredients <span className="italic font-normal">travel</span>.
+                  ingredients{" "}
+                  <span className="italic font-normal">travel</span>.
                 </p>
                 <span className="block w-14 h-px bg-green-mid/40 mt-8" />
                 <p className="mt-4 eyebrow text-green-mid/80">
@@ -57,7 +83,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </div>
     </section>

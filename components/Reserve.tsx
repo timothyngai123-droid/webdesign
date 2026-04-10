@@ -1,11 +1,30 @@
+"use client";
+
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
 import LogoMark from "./LogoMark";
+import { EASE_OUT } from "./animations/motion-tokens";
 
 export default function Reserve() {
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="reserve"
-      className="relative bg-green-mid py-24 md:py-32 overflow-hidden"
+      ref={ref}
+      className="relative py-24 md:py-32 overflow-hidden"
     >
+      {/* Curtain reveal — scales from top to full */}
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-0 bg-green-mid origin-top"
+        initial={reduceMotion ? { scaleY: 1 } : { scaleY: 0 }}
+        animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
+        transition={{ duration: reduceMotion ? 0 : 0.7, ease: EASE_OUT }}
+      />
+
       {/* Soft radial highlight */}
       <div
         aria-hidden="true"
@@ -15,7 +34,8 @@ export default function Reserve() {
             "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(250,246,237,0.12), transparent 70%)",
         }}
       />
-      {/* Decorative oversized mark */}
+
+      {/* Decorative oversized mark watermarks */}
       <LogoMark
         className="absolute -left-20 -bottom-16 h-80 w-auto text-cream-bg/[0.04] hidden md:block"
         strokeWidth={3}
@@ -25,7 +45,16 @@ export default function Reserve() {
         strokeWidth={3}
       />
 
-      <div className="relative max-w-content mx-auto px-6 md:px-16 text-center">
+      <motion.div
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.5,
+          delay: reduceMotion ? 0 : 0.9,
+          ease: EASE_OUT,
+        }}
+        className="relative max-w-content mx-auto px-6 md:px-16 text-center"
+      >
         <LogoMark className="mx-auto h-14 w-auto text-cream-bg/80 mb-8" />
 
         <p className="eyebrow text-cream-bg/70 mb-5">
@@ -42,9 +71,21 @@ export default function Reserve() {
         </p>
 
         <div className="mt-10">
-          <a
+          <motion.a
             href="tel:+441296000000"
-            className="group inline-flex items-center justify-center rounded-full bg-cream-bg px-10 py-4 text-base font-medium text-green-mid hover:bg-cream-border transition-all shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
+            initial={false}
+            whileHover={
+              reduceMotion
+                ? undefined
+                : {
+                    scale: 1.04,
+                    backgroundColor: "#FAF6ED",
+                    boxShadow: "0 0 0 3px rgba(99, 153, 34, 0.2)",
+                  }
+            }
+            whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+            transition={{ duration: 0.2, ease: EASE_OUT }}
+            className="group inline-flex items-center justify-center rounded-full bg-cream-bg px-10 py-4 text-base font-medium text-green-mid shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
           >
             Reserve a Table
             <svg
@@ -59,7 +100,7 @@ export default function Reserve() {
             >
               <path d="M2 8h12M9 3l5 5-5 5" />
             </svg>
-          </a>
+          </motion.a>
         </div>
 
         <div
@@ -88,7 +129,7 @@ export default function Reserve() {
             hello@groveandgrain.co.uk
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
