@@ -1,46 +1,72 @@
 type Props = {
   className?: string;
   strokeWidth?: number;
+  /** When true, renders just the key glyph with no wordmark. */
+  markOnly?: boolean;
 };
 
 /**
- * Grove & Grain mark — a single wheat ear with a leaf, drawn from the
- * brand logo. Uses `currentColor` so the stroke can be themed via
- * Tailwind text color utilities.
+ * KeyMaster 24 logomark — outlined key (circular bow + shafts with a
+ * single step-down tooth at the right end), optionally with the
+ * "KEYMASTER 24" wordmark below. Uses `currentColor` so the whole mark
+ * can be themed via Tailwind `text-*` utilities (critical for the nav,
+ * which is white over the navy hero and stays white after scroll).
  */
-export default function LogoMark({ className, strokeWidth = 5 }: Props) {
+export default function LogoMark({
+  className,
+  strokeWidth = 8,
+  markOnly = false,
+}: Props) {
+  const width = markOnly ? 260 : 900;
+  const height = markOnly ? 95 : 260;
+  const viewBox = markOnly ? "0 0 260 95" : "0 0 900 260";
+
   return (
     <svg
-      viewBox="0 0 220 320"
+      width={width}
+      height={height}
+      viewBox={viewBox}
       fill="none"
       stroke="currentColor"
       strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
-      aria-hidden="true"
-      focusable="false"
+      aria-label="KeyMaster 24"
+      role="img"
     >
-      {/* Main stem */}
-      <path d="M110 22 L110 270" />
-      {/* Top bud */}
-      <path d="M110 10 C94 34 94 56 110 68 C126 56 126 34 110 10 Z" />
-      {/* Pair 1 */}
-      <path d="M110 76 C86 72 62 90 52 114 C78 112 98 98 110 84 Z" />
-      <path d="M110 76 C134 72 158 90 168 114 C142 112 122 98 110 84 Z" />
-      {/* Pair 2 */}
-      <path d="M110 120 C84 116 56 136 44 162 C74 160 98 144 110 128 Z" />
-      <path d="M110 120 C136 116 164 136 176 162 C146 160 122 144 110 128 Z" />
-      {/* Pair 3 */}
-      <path d="M110 168 C80 164 48 186 34 214 C70 212 98 192 110 174 Z" />
-      <path d="M110 168 C140 164 172 186 186 214 C150 212 122 192 110 174 Z" />
-      {/* Leaf on lower-left of stem */}
-      <path d="M110 222 C72 216 30 234 12 264 C46 292 86 278 110 238 Z" />
-      {/* Leaf veins */}
-      <path d="M110 236 L16 266" />
-      <path d="M82 232 L32 272" />
-      <path d="M58 240 L22 272" />
-      <path d="M36 250 L16 268" />
+      <g transform={markOnly ? "translate(0 0)" : "translate(250 0)"}>
+        {/* Bow — single outlined ring */}
+        <circle cx="40" cy="47" r="30" />
+        {/* Shaft — outlined path forming a rectangle with a single
+            step-down tooth at the right end. Drawn as one closed loop
+            so the overall silhouette reads as a solid outline. */}
+        <path
+          d="M 70 32
+             L 244 32
+             L 244 76
+             L 218 76
+             L 218 62
+             L 70 62
+             Z"
+        />
+      </g>
+
+      {!markOnly && (
+        <text
+          x="450"
+          y="210"
+          textAnchor="middle"
+          fontFamily="Barlow, 'Arial Black', system-ui, sans-serif"
+          fontSize="96"
+          fontWeight="800"
+          fill="currentColor"
+          stroke="none"
+          letterSpacing="-2"
+        >
+          KEYMASTER 24
+        </text>
+      )}
     </svg>
   );
 }

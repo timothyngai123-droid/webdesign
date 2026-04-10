@@ -19,7 +19,7 @@ export default function ScrollProgress() {
   return (
     <motion.div
       aria-hidden="true"
-      className="fixed top-0 left-0 right-0 h-[2px] bg-green-light origin-left z-[9999] pointer-events-none"
+      className="fixed top-0 left-0 right-0 h-[2px] bg-navy-light origin-left z-[9999] pointer-events-none"
       style={{ scaleX: reduceMotion ? scrollYProgress : scaleX }}
     />
   );

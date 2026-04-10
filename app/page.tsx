@@ -1,9 +1,10 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Pillars from "@/components/Pillars";
-import Dishes from "@/components/Dishes";
-import About from "@/components/About";
-import Reserve from "@/components/Reserve";
+import ResponseBand from "@/components/ResponseBand";
+import Services from "@/components/Services";
+import Guarantee from "@/components/Guarantee";
+import Trust from "@/components/Trust";
+import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
@@ -18,10 +19,11 @@ export default function Page() {
       <Nav />
       <main id="main">
         <Hero />
-        <Pillars />
-        <Dishes />
-        <About />
-        <Reserve />
+        <ResponseBand />
+        <Services />
+        <Guarantee />
+        <Trust />
+        <CtaSection />
       </main>
       <Footer />
     </>

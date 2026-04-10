@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { EASE_OUT } from "./animations/motion-tokens";
 import LogoMark from "./LogoMark";
 
-const STORAGE_KEY = "gg-intro-played";
+const STORAGE_KEY = "km24-intro-played";
 
 /**
- * Full-screen cream curtain that lifts on first visit only. Tracks
+ * Full-screen navy curtain that lifts on first visit only. Tracks
  * state in `sessionStorage` so subsequent navigations skip the intro.
  * Honours reduced-motion by rendering nothing.
  */
@@ -36,7 +36,7 @@ export default function PageIntro() {
   return (
     <motion.div
       aria-hidden="true"
-      className="fixed inset-0 z-[9998] bg-cream-bg flex items-center justify-center"
+      className="fixed inset-0 z-[9998] bg-navy-deep flex items-center justify-center"
       initial={{ y: 0 }}
       animate={{ y: lifted ? "-100%" : 0 }}
       transition={{ duration: 0.7, ease: EASE_OUT }}
@@ -48,9 +48,9 @@ export default function PageIntro() {
         initial={{ opacity: 0, scale: 0.92 }}
         animate={{ opacity: lifted ? 0 : 1, scale: 1 }}
         transition={{ duration: 0.5, ease: EASE_OUT }}
-        className="text-green-deep"
+        className="text-white"
       >
-        <LogoMark className="h-20 w-auto" />
+        <LogoMark markOnly className="h-12 w-auto" strokeWidth={8} />
       </motion.div>
     </motion.div>
   );

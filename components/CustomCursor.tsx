@@ -75,10 +75,10 @@ export default function CustomCursor() {
       }}
     >
       <motion.div
-        className="rounded-full bg-green-mid"
+        className="rounded-full bg-navy-mid"
         animate={{
-          width: hovering ? 26 : 10,
-          height: hovering ? 26 : 10,
+          width: hovering ? 25 : 10,
+          height: hovering ? 25 : 10,
           opacity: hovering ? 0.4 : 1,
         }}
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
