@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const brands = [
   { href: "/grove-and-grain", label: "/grove-and-grain" },
-  { href: "/keymaster-24", label: "/keymaster-24" },
+  { href: "/keymaster24", label: "/keymaster24" },
   { href: "/flowright-plumbing", label: "/flowright-plumbing" },
   { href: "/sparkle-and-shine", label: "/sparkle-and-shine" },
   { href: "/brightspark-electric", label: "/brightspark-electric" },
