@@ -1,6 +1,6 @@
 "use client";
 
-import FadeUp from "./animations/FadeUp";
+import FadeUp from "../animations/FadeUp";
 
 /**
  * Tight full-width band that sits directly below the hero. Acts as a

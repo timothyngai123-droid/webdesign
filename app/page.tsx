@@ -1,31 +1,29 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import ResponseBand from "@/components/ResponseBand";
-import Services from "@/components/Services";
-import Guarantee from "@/components/Guarantee";
-import Trust from "@/components/Trust";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
-import CustomCursor from "@/components/CustomCursor";
-import PageIntro from "@/components/PageIntro";
+import type { Metadata } from "next";
+import Link from "next/link";
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: "Brand index",
+  description: "Index of brand landing pages.",
+};
+
+const brands = [
+  { href: "/grove-and-grain", label: "/grove-and-grain" },
+  { href: "/keymaster-24", label: "/keymaster-24" },
+  { href: "/flowright-plumbing", label: "/flowright-plumbing" },
+  { href: "/sparkle-and-shine", label: "/sparkle-and-shine" },
+  { href: "/brightspark-electric", label: "/brightspark-electric" },
+];
+
+export default function IndexPage() {
   return (
-    <>
-      <PageIntro />
-      <ScrollProgress />
-      <CustomCursor />
-      <Nav />
-      <main id="main">
-        <Hero />
-        <ResponseBand />
-        <Services />
-        <Guarantee />
-        <Trust />
-        <CtaSection />
-      </main>
-      <Footer />
-    </>
+    <main id="main">
+      <ul>
+        {brands.map((b) => (
+          <li key={b.href}>
+            <Link href={b.href}>{b.label}</Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }

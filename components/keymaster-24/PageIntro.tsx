@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "../animations/motion-tokens";
 import LogoMark from "./LogoMark";
 
 const STORAGE_KEY = "km24-intro-played";

@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import LogoMark from "./LogoMark";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "../animations/motion-tokens";
 
 const linkClass =
   "relative text-silver hover:text-white transition-colors duration-150";
