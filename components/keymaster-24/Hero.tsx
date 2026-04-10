@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "../animations/motion-tokens";
 
 const PhoneIcon = ({ className }: { className?: string }) => (
   <svg

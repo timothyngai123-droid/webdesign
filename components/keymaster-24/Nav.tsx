@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import LogoMark from "./LogoMark";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "../animations/motion-tokens";
 
 const PhoneIcon = ({ className }: { className?: string }) => (
   <svg

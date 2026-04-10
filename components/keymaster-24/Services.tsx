@@ -1,9 +1,9 @@
 "use client";
 
-import FadeUp from "./animations/FadeUp";
-import StaggerContainer from "./animations/StaggerContainer";
-import StaggerItem from "./animations/StaggerItem";
-import DrawIcon from "./animations/DrawIcon";
+import FadeUp from "../animations/FadeUp";
+import StaggerContainer from "../animations/StaggerContainer";
+import StaggerItem from "../animations/StaggerItem";
+import DrawIcon from "../animations/DrawIcon";
 
 type Service = {
   title: string;

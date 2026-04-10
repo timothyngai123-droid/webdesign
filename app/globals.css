@@ -9,8 +9,8 @@
   }
 
   body {
-    background-color: #f2f3f5;
-    color: #0c2340;
+    background-color: #ffffff;
+    color: #000000;
     font-feature-settings: "kern", "liga", "calt";
     text-rendering: optimizeLegibility;
   }
@@ -35,24 +35,11 @@
     }
   }
 
-  ::selection {
-    background-color: #378add;
-    color: #ffffff;
-  }
-
-  :focus-visible {
-    outline: 2px solid #378add;
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
   h1,
   h2,
   h3,
   h4 {
     text-wrap: balance;
-    font-family: var(--font-barlow), system-ui, sans-serif;
-    letter-spacing: -0.015em;
   }
 
   p {
@@ -61,7 +48,40 @@
 }
 
 @layer components {
-  .eyebrow {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * KeyMaster 24 scope — navy palette, Barlow display font.
+   * Wrap the KeyMaster page in `.km-scope` to activate.
+   * ───────────────────────────────────────────────────────────── */
+  .km-scope {
+    --font-display-active: var(--font-barlow);
+    background-color: #f2f3f5;
+    color: #0c2340;
+  }
+
+  .km-scope ::selection {
+    background-color: #378add;
+    color: #ffffff;
+  }
+
+  .km-scope :focus-visible {
+    outline: 2px solid #378add;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .km-scope h1,
+  .km-scope h2,
+  .km-scope h3,
+  .km-scope h4 {
+    font-family: var(--font-barlow), system-ui, sans-serif;
+    letter-spacing: -0.015em;
+  }
+
+  .km-scope .eyebrow {
     font-family: var(--font-inter), system-ui, sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
@@ -69,18 +89,14 @@
     text-transform: uppercase;
   }
 
-  .tabular {
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* The thin underline drawn beneath "30 minutes" in the hero subheading. */
-  .underline-draw {
+  /* The thin underline drawn beneath "30 minutes" in the KeyMaster hero. */
+  .km-scope .underline-draw {
     position: relative;
     display: inline-block;
     color: inherit;
     white-space: nowrap;
   }
-  .underline-draw::after {
+  .km-scope .underline-draw::after {
     content: "";
     position: absolute;
     left: 0;
@@ -92,12 +108,11 @@
     animation: draw-line 0.5s cubic-bezier(0, 0, 0.2, 1) 1s forwards;
   }
   @media (prefers-reduced-motion: reduce) {
-    .underline-draw::after {
+    .km-scope .underline-draw::after {
       animation: none;
       clip-path: inset(0 0% 0 0);
     }
   }
-
   @keyframes draw-line {
     from {
       clip-path: inset(0 100% 0 0);
@@ -107,7 +122,7 @@
     }
   }
 
-  .pulse-dot {
+  .km-scope .pulse-dot {
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -124,5 +139,83 @@
     50% {
       opacity: 0.3;
     }
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * Grove & Grain scope — cream palette, Playfair display font.
+   * Wrap the Grove & Grain page in `.gg-scope` to activate.
+   * ───────────────────────────────────────────────────────────── */
+  .gg-scope {
+    --font-display-active: var(--font-playfair);
+    background-color: #faf6ed;
+    color: #5c5043;
+  }
+
+  .gg-scope ::selection {
+    background-color: #1c3a0f;
+    color: #faf6ed;
+  }
+
+  .gg-scope :focus-visible {
+    outline: 2px solid #2d5a1b;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .gg-scope h1,
+  .gg-scope h2,
+  .gg-scope h3,
+  .gg-scope h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: normal;
+  }
+
+  /* Hairline divider ornament used between kickers and headings. */
+  .gg-scope .ornament-rule {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #2d5a1b;
+  }
+  .gg-scope .ornament-rule::before,
+  .gg-scope .ornament-rule::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.5;
+  }
+
+  .gg-scope .eyebrow {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2d5a1b;
+  }
+
+  /* Fine grain texture laid over cream backgrounds for warmth. */
+  .gg-scope .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.11 0 0 0 0 0.23 0 0 0 0 0.06 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>");
+    background-size: 220px 220px;
+    mix-blend-mode: multiply;
+    opacity: 0.06;
+  }
+
+  .gg-scope .drop-cap::first-letter {
+    float: left;
+    font-family: var(--font-playfair), Georgia, serif;
+    font-size: 4.4rem;
+    line-height: 0.9;
+    padding: 0.35rem 0.6rem 0 0;
+    color: #1c3a0f;
+    font-weight: 500;
   }
 }

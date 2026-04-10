@@ -2,7 +2,7 @@
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { EASE_OUT } from "./animations/motion-tokens";
+import { EASE_OUT } from "../animations/motion-tokens";
 
 const PhoneIcon = ({ className }: { className?: string }) => (
   <svg

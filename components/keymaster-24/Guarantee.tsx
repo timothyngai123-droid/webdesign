@@ -1,9 +1,9 @@
 "use client";
 
-import FadeUp from "./animations/FadeUp";
-import StaggerContainer from "./animations/StaggerContainer";
-import StaggerItem from "./animations/StaggerItem";
-import CountUp from "./animations/CountUp";
+import FadeUp from "../animations/FadeUp";
+import StaggerContainer from "../animations/StaggerContainer";
+import StaggerItem from "../animations/StaggerItem";
+import CountUp from "../animations/CountUp";
 
 const CheckIcon = ({ className }: { className?: string }) => (
   <svg

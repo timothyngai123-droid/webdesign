@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow, Inter } from "next/font/google";
+import { Barlow, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -13,13 +13,20 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "KeyMaster 24 — 24/7 Emergency Locksmith. 30 Minutes or Less.",
-  description:
-    "Emergency locksmith covering the whole region. On your doorstep in 30 minutes or less. Fully insured, DBS checked, no call-out fee. Available 24 hours, 7 days a week.",
+  title: "Brand index",
+  description: "Brand landing page index.",
 };
 
 export default function RootLayout({
@@ -28,11 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
-      <body className="font-sans bg-silver-light text-text-dark antialiased">
+    <html
+      lang="en"
+      className={`${barlow.variable} ${inter.variable} ${playfair.variable}`}
+    >
+      <body className="font-sans antialiased bg-white text-black">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-navy-deep focus:px-5 focus:py-3 focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded focus:bg-black focus:px-4 focus:py-2 focus:text-sm focus:text-white"
         >
           Skip to content
         </a>
