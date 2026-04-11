@@ -27,6 +27,18 @@ const config: Config = {
         "cream-border": "#D9CDB4",
         "text-warm": "#5C5043",
         "cream-light": "#C8B99A",
+        // FlowRight Plumbing
+        "fr-canvas": "#0A0F14",
+        "fr-surface-1": "#0F1923",
+        "fr-surface-2": "#162333",
+        "fr-blue-core": "#378ADD",
+        "fr-blue-deep": "#185FA5",
+        "fr-blue-pale": "#B5D4F4",
+        "fr-white": "#F0F4F8",
+        "fr-muted": "#6B8099",
+        "fr-border": "#1E3048",
+        "fr-success": "#1D9E75",
+        "fr-footer": "#060C12",
       },
       fontFamily: {
         // `font-display` resolves via a CSS custom property that each

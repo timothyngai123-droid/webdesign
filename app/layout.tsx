@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow, Inter, Playfair_Display } from "next/font/google";
+import { Barlow, DM_Sans, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -24,6 +24,13 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+  weight: ["400", "500", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Brand index",
   description: "Brand landing page index.",
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlow.variable} ${inter.variable} ${playfair.variable}`}
+      className={`${barlow.variable} ${inter.variable} ${playfair.variable} ${dmSans.variable}`}
     >
       <body className="font-sans antialiased bg-white text-black">
         <a
