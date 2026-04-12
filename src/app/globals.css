@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* ─── Custom theme tokens ─── */
+@theme {
+  --color-bg: #0A0A0B;
+  --color-surface: #111113;
+  --color-surface-2: #18181B;
+  --color-surface-3: #1F1F23;
+  --color-accent: #7C3AED;
+  --color-accent-hover: #6D28D9;
+  --color-text: #FAFAFA;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #555555;
+}
+
+/* ─── Base resets ─── */
+@layer base {
+  * {
+    cursor: none;
+  }
+
+  @media (pointer: coarse) {
+    * {
+      cursor: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root {
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    line-height: 1.65;
+    background-color: #0A0A0B;
+    color: #FAFAFA;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #7C3AED;
+    color: #FAFAFA;
+  }
+
+  /* Focus-visible styles for accessibility */
+  :focus-visible {
+    outline: 2px solid #7C3AED;
+    outline-offset: 2px;
+  }
+}
+
+/* ─── Marquee animation ─── */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+/* ─── Radial gradient utility ─── */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-from, transparent), var(--tw-gradient-via, transparent), var(--tw-gradient-to, transparent));
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F1F23;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
