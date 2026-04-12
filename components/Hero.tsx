@@ -30,40 +30,32 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen bg-cream-bg flex items-center pt-32 pb-24 overflow-hidden grain"
+      className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/hero.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+      }}
     >
-      {/* Soft radial warmth behind the type */}
+      {/* Dark overlay for text legibility */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(99,153,34,0.10), transparent 70%)",
-        }}
+        className="absolute inset-0"
+        style={{ background: "rgba(0, 0, 0, 0.45)" }}
       />
 
-      {/* Thin corner ornaments to frame the hero */}
-      <div
-        aria-hidden="true"
-        className="hidden md:block absolute top-28 left-10 w-24 h-24 border-l border-t border-cream-border"
-      />
-      <div
-        aria-hidden="true"
-        className="hidden md:block absolute bottom-16 right-10 w-24 h-24 border-r border-b border-cream-border"
-      />
-
-      <div className="relative max-w-content mx-auto px-6 md:px-16 w-full text-center">
+      <div className="relative z-10 max-w-content mx-auto px-6 md:px-16 w-full text-center">
         <motion.div {...fade(0, 0.6)}>
-          <LogoMark className="mx-auto h-16 md:h-20 w-auto text-green-deep mb-8" />
+          <LogoMark className="mx-auto h-16 md:h-20 w-auto text-white mb-8" />
         </motion.div>
 
-        <motion.p {...fade(0, 0.5)} className="eyebrow ornament-rule mb-8">
+        <motion.p {...fade(0, 0.5)} className="eyebrow ornament-rule mb-8 text-white">
           <span>Est. 2019 &middot; Aylesbury</span>
         </motion.p>
 
         <motion.h1
           {...fadeUp(0.15, 0.7)}
-          className="font-display text-green-deep font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(2.5rem,7vw,5.5rem)]"
+          className="font-display text-white font-medium leading-[1.02] tracking-[-0.02em] text-[clamp(2.5rem,7vw,5.5rem)]"
         >
           Grown nearby.
           <br />
@@ -73,7 +65,7 @@ export default function Hero() {
             {/* Drawn underline — clip-path animates left-to-right after heading settles */}
             <motion.span
               aria-hidden="true"
-              className="absolute left-0 -bottom-1 h-[3px] w-full bg-green-light"
+              className="absolute left-0 -bottom-1 h-[3px] w-full bg-white/70"
               initial={
                 reduceMotion
                   ? { clipPath: "inset(0 0% 0 0)" }
@@ -93,7 +85,7 @@ export default function Hero() {
         <motion.div
           {...fade(0.25, 0.5)}
           aria-hidden="true"
-          className="mx-auto my-10 flex items-center justify-center gap-3 text-green-mid/60"
+          className="mx-auto my-10 flex items-center justify-center gap-3 text-white/60"
         >
           <span className="block h-px w-14 bg-current" />
           <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true">
@@ -104,7 +96,7 @@ export default function Hero() {
 
         <motion.p
           {...fadeUp(0.3, 0.6)}
-          className="mx-auto max-w-2xl font-sans text-lg md:text-xl text-text-warm leading-relaxed font-light"
+          className="mx-auto max-w-2xl font-sans text-lg md:text-xl text-white/90 leading-relaxed font-light"
         >
           A neighbourhood bistro serving seasonal British produce,
           <br className="hidden sm:block" />
@@ -149,12 +141,12 @@ export default function Hero() {
 
         <motion.p
           {...fade(0.65, 0.5)}
-          className="mt-14 text-[0.72rem] md:text-xs uppercase tracking-[0.22em] text-text-warm/70"
+          className="mt-14 text-[0.72rem] md:text-xs uppercase tracking-[0.22em] text-white/70"
         >
           Open Tuesday to Sunday
-          <span className="mx-3 text-green-mid/50">&bull;</span>
+          <span className="mx-3 text-white/50">&bull;</span>
           Lunch &amp; Dinner
-          <span className="mx-3 text-green-mid/50">&bull;</span>
+          <span className="mx-3 text-white/50">&bull;</span>
           Aylesbury Town Centre
         </motion.p>
       </div>
