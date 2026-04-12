@@ -32,7 +32,7 @@ export default function LoadingScreen() {
       {isLoading && (
         <motion.div
           className="fixed inset-0 flex items-center justify-center"
-          style={{ zIndex: 10000, backgroundColor: '#0A0A0B' }}
+          style={{ zIndex: 10000, backgroundColor: '#0d0e10' }}
           exit={{ scale: 1.1, opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
@@ -40,7 +40,7 @@ export default function LoadingScreen() {
             {/* Accent line drawing across center */}
             <motion.div
               className="absolute top-1/2 left-1/2 h-[1px] -translate-x-1/2 -translate-y-1/2"
-              style={{ backgroundColor: '#7C3AED' }}
+              style={{ backgroundColor: '#3b82f6' }}
               initial={{ width: 0 }}
               animate={{ width: 200 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -52,7 +52,7 @@ export default function LoadingScreen() {
                 <motion.span
                   key={i}
                   className="text-3xl md:text-5xl font-bold tracking-[0.2em]"
-                  style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+                  style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
@@ -69,7 +69,7 @@ export default function LoadingScreen() {
             {/* STUDIO */}
             <motion.span
               className="text-lg md:text-2xl tracking-[0.4em] mt-4"
-              style={{ fontFamily: 'var(--font-display)', color: '#A1A1AA' }}
+              style={{ fontFamily: 'var(--font-display)', color: '#6b6f7a' }}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{

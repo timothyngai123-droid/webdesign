@@ -68,7 +68,7 @@ export default function CustomCursor() {
           y: cursorY,
           translateX: '-50%',
           translateY: '-50%',
-          backgroundColor: isHovering ? '#7C3AED' : '#ffffff',
+          backgroundColor: isHovering ? '#3b82f6' : '#e2e4e9',
           zIndex: 9999,
           mixBlendMode: 'difference',
         }}
@@ -82,7 +82,7 @@ export default function CustomCursor() {
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          borderColor: isHovering ? '#7C3AED' : 'rgba(255,255,255,0.5)',
+          borderColor: isHovering ? '#3b82f6' : 'rgba(226,228,233,0.5)',
           zIndex: 9999,
           mixBlendMode: 'difference',
         }}

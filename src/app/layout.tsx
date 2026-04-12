@@ -36,8 +36,8 @@ export default function RootLayout({
       <body
         className="antialiased overflow-x-hidden"
         style={{
-          backgroundColor: '#0A0A0B',
-          color: '#FAFAFA',
+          backgroundColor: '#0d0e10',
+          color: '#e2e4e9',
           fontFamily: "'Inter', system-ui, sans-serif",
         }}
       >

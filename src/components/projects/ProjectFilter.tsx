@@ -29,8 +29,8 @@ export default function ProjectFilter({
               layoutId="activeFilter"
               className="absolute inset-0 rounded-full border"
               style={{
-                backgroundColor: 'rgba(124,58,237,0.1)',
-                borderColor: 'rgba(124,58,237,0.3)',
+                backgroundColor: 'rgba(59,130,246,0.1)',
+                borderColor: 'rgba(59,130,246,0.3)',
               }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             />
@@ -38,7 +38,7 @@ export default function ProjectFilter({
           <span
             className="relative transition-colors"
             style={{
-              color: active === category ? '#FAFAFA' : '#555',
+              color: active === category ? '#e2e4e9' : '#6b6f7a',
               zIndex: 10,
             }}
           >

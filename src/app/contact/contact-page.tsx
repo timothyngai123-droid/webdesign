@@ -23,7 +23,7 @@ export default function ContactPageContent() {
             <div>
               <h1
                 className="text-[clamp(2.5rem,5vw,5rem)] font-bold mb-8 leading-[1.1]"
-                style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+                style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
               >
                 <SplitText>Let&apos;s talk.</SplitText>
               </h1>
@@ -31,7 +31,7 @@ export default function ContactPageContent() {
               <AnimatedText delay={0.3}>
                 <p
                   className="text-lg leading-relaxed mb-12 max-w-md"
-                  style={{ color: '#A1A1AA' }}
+                  style={{ color: '#6b6f7a' }}
                 >
                   Tell me about your business and what you&apos;re looking for.
                   I&apos;ll get back to you within 24 hours.
@@ -40,7 +40,7 @@ export default function ContactPageContent() {
 
               <AnimatedText delay={0.5}>
                 <div className="space-y-4">
-                  <p style={{ color: '#FAFAFA' }}>hello@timothyngai.studio</p>
+                  <p style={{ color: '#e2e4e9' }}>hello@timothyngai.studio</p>
                   <div className="flex items-center gap-4 pt-4">
                     {socialLinks.map((social) => (
                       <a
@@ -48,7 +48,7 @@ export default function ContactPageContent() {
                         href={social.href}
                         aria-label={social.label}
                         className="transition-colors"
-                        style={{ color: '#555' }}
+                        style={{ color: '#6b6f7a' }}
                         data-cursor-hover
                       >
                         <social.icon size={20} />

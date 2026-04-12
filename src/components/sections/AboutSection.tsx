@@ -21,7 +21,7 @@ export default function AboutSection() {
           <div>
             <h2
               className="text-[clamp(2rem,4vw,3.5rem)] leading-[1.15] font-bold"
-              style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+              style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
             >
               <SplitText>
                 Your website is your first impression. I make sure
@@ -33,21 +33,21 @@ export default function AboutSection() {
           {/* Right — Description */}
           <div className="flex flex-col gap-6">
             <AnimatedText>
-              <p className="text-lg leading-relaxed" style={{ color: '#A1A1AA' }}>
+              <p className="text-lg leading-relaxed" style={{ color: '#6b6f7a' }}>
                 Every site I build is custom-coded from scratch — no WordPress,
                 no templates, no page builders. Just clean, performant code
                 tailored to your brand.
               </p>
             </AnimatedText>
             <AnimatedText delay={0.15}>
-              <p className="text-lg leading-relaxed" style={{ color: '#A1A1AA' }}>
+              <p className="text-lg leading-relaxed" style={{ color: '#6b6f7a' }}>
                 I bring 3D elements, smooth animations, and cinematic scroll
                 experiences that make visitors stop and pay attention. Your
                 website won&apos;t just exist — it&apos;ll make a statement.
               </p>
             </AnimatedText>
             <AnimatedText delay={0.3}>
-              <p className="text-lg leading-relaxed" style={{ color: '#A1A1AA' }}>
+              <p className="text-lg leading-relaxed" style={{ color: '#6b6f7a' }}>
                 You get full ownership — your own hosting, your own domain, your
                 own code. No lock-in, no monthly platform fees. It&apos;s yours,
                 forever.
@@ -69,14 +69,14 @@ export default function AboutSection() {
           {techBadges.map((badge) => (
             <motion.span
               key={badge.name}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#1F1F23] text-sm"
-              style={{ backgroundColor: '#111113', color: '#A1A1AA' }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#252830] text-sm"
+              style={{ backgroundColor: '#131518', color: '#6b6f7a' }}
               variants={{
                 hidden: { y: 20, opacity: 0 },
                 visible: { y: 0, opacity: 1 },
               }}
             >
-              <span style={{ color: '#7C3AED' }}>{badge.icon}</span>
+              <span style={{ color: '#3b82f6' }}>{badge.icon}</span>
               {badge.name}
             </motion.span>
           ))}

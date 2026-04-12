@@ -19,7 +19,7 @@ export default function Navbar() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-[#1F1F23]/50'
+          ? 'bg-[#0d0e10]/80 backdrop-blur-xl border-b border-[#252830]/50'
           : ''
       }`}
       style={{ zIndex: 100 }}
@@ -32,11 +32,11 @@ export default function Navbar() {
         <Link
           href="/"
           className="font-bold text-lg tracking-wide no-underline"
-          style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+          style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
           data-cursor-hover
         >
           TIMOTHY NGAI{' '}
-          <span style={{ color: '#7C3AED' }}>STUDIO</span>
+          <span style={{ color: '#3b82f6' }}>STUDIO</span>
         </Link>
 
         {/* Desktop nav */}
@@ -44,7 +44,7 @@ export default function Navbar() {
           <a
             href="#projects"
             className="text-sm tracking-wide transition-colors no-underline"
-            style={{ color: '#A1A1AA' }}
+            style={{ color: '#6b6f7a' }}
             data-cursor-hover
           >
             Work
@@ -52,7 +52,7 @@ export default function Navbar() {
           <a
             href="#process"
             className="text-sm tracking-wide transition-colors no-underline"
-            style={{ color: '#A1A1AA' }}
+            style={{ color: '#6b6f7a' }}
             data-cursor-hover
           >
             Process
@@ -60,7 +60,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="text-sm tracking-wide transition-colors no-underline"
-            style={{ color: '#A1A1AA' }}
+            style={{ color: '#6b6f7a' }}
             data-cursor-hover
           >
             Contact
@@ -68,7 +68,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="text-sm px-5 py-2.5 rounded-full text-white no-underline transition-colors"
-            style={{ backgroundColor: '#7C3AED' }}
+            style={{ backgroundColor: '#3b82f6' }}
             data-cursor-hover
           >
             Start a Project
@@ -78,7 +78,7 @@ export default function Navbar() {
         {/* Mobile menu toggle */}
         <button
           className="md:hidden bg-transparent border-none"
-          style={{ color: '#FAFAFA', cursor: 'none' }}
+          style={{ color: '#e2e4e9', cursor: 'none' }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           data-cursor-hover
@@ -91,8 +91,8 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden border-t border-[#1F1F23]"
-            style={{ backgroundColor: '#0A0A0B' }}
+            className="md:hidden border-t border-[#252830]"
+            style={{ backgroundColor: '#0d0e10' }}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -102,7 +102,7 @@ export default function Navbar() {
               <a
                 href="#projects"
                 className="py-2 transition-colors no-underline"
-                style={{ color: '#A1A1AA' }}
+                style={{ color: '#6b6f7a' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Work
@@ -110,7 +110,7 @@ export default function Navbar() {
               <a
                 href="#process"
                 className="py-2 transition-colors no-underline"
-                style={{ color: '#A1A1AA' }}
+                style={{ color: '#6b6f7a' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Process
@@ -118,7 +118,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className="py-2 transition-colors no-underline"
-                style={{ color: '#A1A1AA' }}
+                style={{ color: '#6b6f7a' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
@@ -126,7 +126,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className="text-center py-3 rounded-full text-white mt-2 no-underline"
-                style={{ backgroundColor: '#7C3AED' }}
+                style={{ backgroundColor: '#3b82f6' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start a Project

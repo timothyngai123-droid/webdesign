@@ -16,17 +16,17 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-[#1F1F23] py-12">
+    <footer className="border-t border-[#252830] py-12">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <AnimatedText>
             <span
               className="font-bold text-lg tracking-wide"
-              style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+              style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
             >
               TIMOTHY NGAI{' '}
-              <span style={{ color: '#7C3AED' }}>STUDIO</span>
+              <span style={{ color: '#3b82f6' }}>STUDIO</span>
             </span>
           </AnimatedText>
 
@@ -38,7 +38,7 @@ export default function Footer() {
                 href={social.href}
                 aria-label={social.label}
                 className="transition-colors"
-                style={{ color: '#555' }}
+                style={{ color: '#6b6f7a' }}
                 data-cursor-hover
               >
                 <social.icon size={20} />
@@ -47,12 +47,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-8 pt-8 border-t border-[#1F1F23]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-8 pt-8 border-t border-[#252830]">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            <p className="text-xs" style={{ color: '#555' }}>
+            <p className="text-xs" style={{ color: '#6b6f7a' }}>
               &copy; 2026 Timothy Ngai Studio. All rights reserved.
             </p>
-            <p className="text-xs" style={{ color: '#555' }}>
+            <p className="text-xs" style={{ color: '#6b6f7a' }}>
               Designed &amp; built by hand.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function Footer() {
           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 text-xs bg-transparent border-none transition-colors"
-            style={{ color: '#555', cursor: 'none' }}
+            style={{ color: '#6b6f7a', cursor: 'none' }}
             data-cursor-hover
           >
             Back to top <ArrowUp size={14} />

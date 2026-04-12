@@ -21,7 +21,7 @@ export default function ProjectsSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <h2
           className="text-[clamp(2rem,4vw,4rem)] font-bold mb-12"
-          style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+          style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
         >
           <SplitText>Selected Work</SplitText>
         </h2>

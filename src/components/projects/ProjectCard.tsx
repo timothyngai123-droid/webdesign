@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Image container */}
       <div
         className="relative overflow-hidden rounded-xl"
-        style={{ aspectRatio: '16 / 10', backgroundColor: '#111113' }}
+        style={{ aspectRatio: '16 / 10', backgroundColor: '#131518' }}
       >
         <Image
           src={project.image}
@@ -55,7 +55,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="mt-5">
         <span
           className="text-xs uppercase tracking-[0.2em] mb-2 inline-block"
-          style={{ color: '#7C3AED' }}
+          style={{ color: '#3b82f6' }}
         >
           {project.categoryLabel}
         </span>
@@ -63,12 +63,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           className="text-xl font-bold transition-transform duration-500 group-hover:-translate-y-1"
           style={{
             fontFamily: 'var(--font-display)',
-            color: '#FAFAFA',
+            color: '#e2e4e9',
             transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
           {project.name}
-          <span className="font-normal" style={{ color: '#A1A1AA' }}>
+          <span className="font-normal" style={{ color: '#6b6f7a' }}>
             {' '}
             — {project.subtitle}
           </span>
@@ -77,11 +77,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <div
           className="h-[2px] mt-2 transition-all duration-500 w-0 group-hover:w-full"
           style={{
-            backgroundColor: '#7C3AED',
+            backgroundColor: '#3b82f6',
             transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         />
-        <p className="text-sm mt-3 leading-relaxed" style={{ color: '#666' }}>
+        <p className="text-sm mt-3 leading-relaxed" style={{ color: '#6b6f7a' }}>
           {project.description}
         </p>
       </div>

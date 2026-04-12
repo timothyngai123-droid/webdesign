@@ -18,7 +18,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:px-4 focus:py-2 focus:top-2 focus:left-2 focus:rounded focus:text-white"
-        style={{ zIndex: 10001, backgroundColor: '#7C3AED' }}
+        style={{ zIndex: 10001, backgroundColor: '#3b82f6' }}
       >
         Skip to content
       </a>

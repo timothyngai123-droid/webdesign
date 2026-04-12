@@ -12,7 +12,7 @@ export default function CTASection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(124,58,237,0.06), transparent)',
+            'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(59,130,246,0.06), transparent)',
         }}
       />
 
@@ -22,7 +22,7 @@ export default function CTASection() {
       >
         <h2
           className="text-[clamp(2rem,5vw,4.5rem)] font-bold mb-8"
-          style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+          style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
         >
           <SplitText>
             Let&apos;s build something your competitors can&apos;t ignore.
@@ -32,7 +32,7 @@ export default function CTASection() {
         <AnimatedText delay={0.3}>
           <p
             className="text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
-            style={{ color: '#A1A1AA' }}
+            style={{ color: '#6b6f7a' }}
           >
             I take on a limited number of projects at a time to give every
             client my full attention.

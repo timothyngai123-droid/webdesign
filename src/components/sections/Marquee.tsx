@@ -15,14 +15,14 @@ export default function Marquee() {
   const content = items.map((item) => `\u2605 ${item} `).join('');
 
   return (
-    <section className="py-8 border-y border-[#1F1F23] overflow-hidden">
+    <section className="py-8 border-y border-[#252830] overflow-hidden">
       <div className="marquee-container group">
         <div className="marquee-content group-hover:[animation-play-state:paused]">
           {[0, 1, 2, 3].map((i) => (
             <span
               key={i}
               className="text-sm md:text-base uppercase tracking-[0.3em] font-medium whitespace-nowrap"
-              style={{ color: '#7C3AED' }}
+              style={{ color: '#3b82f6' }}
             >
               {content}
             </span>

@@ -51,8 +51,8 @@ export default function MagneticButton({
       className={cn(
         'inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-medium tracking-wide transition-colors',
         variant === 'primary'
-          ? 'bg-[#7C3AED] text-white hover:bg-[#6D28D9]'
-          : 'border border-[#333] text-[#FAFAFA] hover:border-[#7C3AED] hover:text-[#7C3AED]',
+          ? 'bg-[#3b82f6] text-white hover:bg-[#2563eb]'
+          : 'border border-[#252830] text-[#e2e4e9] hover:border-[#3b82f6] hover:text-[#3b82f6]',
         className
       )}
       style={{ x: springX, y: springY }}

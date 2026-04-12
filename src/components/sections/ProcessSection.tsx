@@ -32,11 +32,11 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="py-32 lg:py-40 border-t border-[#1F1F23]" id="process">
+    <section className="py-32 lg:py-40 border-t border-[#252830]" id="process">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <h2
           className="text-[clamp(2rem,4vw,4rem)] font-bold mb-20"
-          style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+          style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
         >
           <SplitText>How I Work</SplitText>
         </h2>
@@ -61,7 +61,7 @@ export default function ProcessSection() {
                   className="hidden lg:block absolute top-8 left-full w-full h-[1px]"
                   style={{
                     background:
-                      'linear-gradient(to right, #1F1F23, transparent)',
+                      'linear-gradient(to right, #252830, transparent)',
                   }}
                 />
               )}
@@ -70,18 +70,18 @@ export default function ProcessSection() {
                 className="text-5xl font-bold mb-4 block"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  color: 'rgba(124,58,237,0.2)',
+                  color: 'rgba(59,130,246,0.2)',
                 }}
               >
                 {step.number}
               </span>
               <h3
                 className="text-xl font-bold mb-3"
-                style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+                style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
               >
                 {step.title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#A1A1AA' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#6b6f7a' }}>
                 {step.description}
               </p>
             </motion.div>

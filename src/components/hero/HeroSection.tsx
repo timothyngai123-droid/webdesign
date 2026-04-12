@@ -38,7 +38,7 @@ export default function HeroSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(124,58,237,0.06), transparent)',
+            'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(59,130,246,0.07), transparent)',
         }}
       />
 
@@ -50,7 +50,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-8 pt-24 lg:pt-0">
           <h1
             className="text-[clamp(2.5rem,6vw,6rem)] leading-[1.05] font-bold"
-            style={{ fontFamily: 'var(--font-display)', color: '#FAFAFA' }}
+            style={{ fontFamily: 'var(--font-display)', color: '#e2e4e9' }}
           >
             <SplitText>
               I build websites that make local businesses look world-class.
@@ -60,7 +60,7 @@ export default function HeroSection() {
           <AnimatedText delay={0.5}>
             <p
               className="text-lg md:text-xl max-w-lg leading-relaxed"
-              style={{ color: '#A1A1AA' }}
+              style={{ color: '#6b6f7a' }}
             >
               Custom-coded. 3D-animated. Built to convert browsers into
               customers.
@@ -81,7 +81,7 @@ export default function HeroSection() {
           <AnimatedText delay={0.9}>
             <p
               className="text-xs uppercase tracking-[0.2em]"
-              style={{ color: '#555' }}
+              style={{ color: '#6b6f7a' }}
             >
               Web Designer &amp; Developer — Based in London
             </p>

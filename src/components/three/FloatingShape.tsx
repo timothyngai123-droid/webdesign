@@ -33,15 +33,15 @@ export default function FloatingShape() {
   return (
     <>
       <ambientLight intensity={0.2} />
-      <directionalLight position={[5, 5, 5]} intensity={0.6} color="#7C3AED" />
-      <pointLight position={[-5, -5, -5]} intensity={0.4} color="#7C3AED" />
-      <pointLight position={[0, 5, 0]} intensity={0.2} color="#ffffff" />
+      <directionalLight position={[5, 5, 5]} intensity={0.6} color="#3b82f6" />
+      <pointLight position={[-5, -5, -5]} intensity={0.4} color="#3b82f6" />
+      <pointLight position={[0, 5, 0]} intensity={0.2} color="#e2e4e9" />
 
       {/* Main wireframe icosahedron */}
       <Icosahedron ref={meshRef} args={[2, 1]}>
         <meshStandardMaterial
-          color="#1a1a2e"
-          emissive="#7C3AED"
+          color="#0d1420"
+          emissive="#3b82f6"
           emissiveIntensity={0.2}
           roughness={0.2}
           metalness={0.9}
@@ -51,7 +51,7 @@ export default function FloatingShape() {
 
       {/* Outer glow wireframe */}
       <Icosahedron ref={glowRef} args={[2.6, 1]}>
-        <meshBasicMaterial color="#7C3AED" transparent opacity={0.04} wireframe />
+        <meshBasicMaterial color="#3b82f6" transparent opacity={0.04} wireframe />
       </Icosahedron>
     </>
   );

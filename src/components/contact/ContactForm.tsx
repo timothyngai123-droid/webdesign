@@ -42,7 +42,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div>
-        <label className="text-sm mb-2 block" style={{ color: '#A1A1AA' }}>
+        <label className="text-sm mb-2 block" style={{ color: '#6b6f7a' }}>
           Name
         </label>
         <input
@@ -52,16 +52,16 @@ export default function ContactForm() {
           onChange={(e) => handleChange('name', e.target.value)}
           className={inputClass}
           style={{
-            backgroundColor: '#111113',
-            border: '1px solid #1F1F23',
-            color: '#FAFAFA',
+            backgroundColor: '#131518',
+            border: '1px solid #252830',
+            color: '#e2e4e9',
           }}
           placeholder="Your name"
         />
       </div>
 
       <div>
-        <label className="text-sm mb-2 block" style={{ color: '#A1A1AA' }}>
+        <label className="text-sm mb-2 block" style={{ color: '#6b6f7a' }}>
           Email
         </label>
         <input
@@ -71,16 +71,16 @@ export default function ContactForm() {
           onChange={(e) => handleChange('email', e.target.value)}
           className={inputClass}
           style={{
-            backgroundColor: '#111113',
-            border: '1px solid #1F1F23',
-            color: '#FAFAFA',
+            backgroundColor: '#131518',
+            border: '1px solid #252830',
+            color: '#e2e4e9',
           }}
           placeholder="your@email.com"
         />
       </div>
 
       <div>
-        <label className="text-sm mb-2 block" style={{ color: '#A1A1AA' }}>
+        <label className="text-sm mb-2 block" style={{ color: '#6b6f7a' }}>
           Business Name
         </label>
         <input
@@ -89,9 +89,9 @@ export default function ContactForm() {
           onChange={(e) => handleChange('business', e.target.value)}
           className={inputClass}
           style={{
-            backgroundColor: '#111113',
-            border: '1px solid #1F1F23',
-            color: '#FAFAFA',
+            backgroundColor: '#131518',
+            border: '1px solid #252830',
+            color: '#e2e4e9',
           }}
           placeholder="Your business name"
         />
@@ -99,7 +99,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label className="text-sm mb-2 block" style={{ color: '#A1A1AA' }}>
+          <label className="text-sm mb-2 block" style={{ color: '#6b6f7a' }}>
             Business Type
           </label>
           <select
@@ -107,9 +107,9 @@ export default function ContactForm() {
             onChange={(e) => handleChange('businessType', e.target.value)}
             className={inputClass}
             style={{
-              backgroundColor: '#111113',
-              border: '1px solid #1F1F23',
-              color: formData.businessType ? '#FAFAFA' : '#555',
+              backgroundColor: '#131518',
+              border: '1px solid #252830',
+              color: formData.businessType ? '#e2e4e9' : '#6b6f7a',
             }}
           >
             <option value="">Select type</option>
@@ -121,7 +121,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 block" style={{ color: '#A1A1AA' }}>
+          <label className="text-sm mb-2 block" style={{ color: '#6b6f7a' }}>
             Project Budget
           </label>
           <select
@@ -129,9 +129,9 @@ export default function ContactForm() {
             onChange={(e) => handleChange('budget', e.target.value)}
             className={inputClass}
             style={{
-              backgroundColor: '#111113',
-              border: '1px solid #1F1F23',
-              color: formData.budget ? '#FAFAFA' : '#555',
+              backgroundColor: '#131518',
+              border: '1px solid #252830',
+              color: formData.budget ? '#e2e4e9' : '#6b6f7a',
             }}
           >
             <option value="">Select budget</option>
@@ -144,7 +144,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="text-sm mb-2 block" style={{ color: '#A1A1AA' }}>
+        <label className="text-sm mb-2 block" style={{ color: '#6b6f7a' }}>
           Message
         </label>
         <textarea
@@ -154,9 +154,9 @@ export default function ContactForm() {
           onChange={(e) => handleChange('message', e.target.value)}
           className={`${inputClass} resize-none`}
           style={{
-            backgroundColor: '#111113',
-            border: '1px solid #1F1F23',
-            color: '#FAFAFA',
+            backgroundColor: '#131518',
+            border: '1px solid #252830',
+            color: '#e2e4e9',
           }}
           placeholder="Tell me about your project..."
         />
