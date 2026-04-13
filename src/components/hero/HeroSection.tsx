@@ -83,7 +83,7 @@ export default function HeroSection() {
               className="text-xs uppercase tracking-[0.2em]"
               style={{ color: '#6b6f7a' }}
             >
-              Web Designer &amp; Developer — Based in London
+              Web Designer &amp; Developer
             </p>
           </AnimatedText>
         </div>
