@@ -9,19 +9,21 @@ export interface Project {
   description: string;
   image: string;
   color: string;
+  href?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: 'ember-and-oak',
-    name: 'Ember & Oak',
-    subtitle: 'Farm-to-Table Restaurant',
+    id: 'grove-and-grain',
+    name: 'Grove & Grain',
+    subtitle: 'Farm-to-Table Bistro',
     category: 'Restaurants',
     categoryLabel: 'Restaurant Website',
     description:
-      'A cinematic dining experience brought online with 3D menu navigation and reservation flow.',
+      'A warm, seasonal bistro site with grain textures, animated scroll reveals, and an integrated reservation flow.',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
-    color: '#D97706',
+    color: '#2D5A1B',
+    href: '/grove-and-grain',
   },
   {
     id: 'keymaster-24',
@@ -33,6 +35,7 @@ export const projects: Project[] = [
       'Dark, trustworthy aesthetic with live availability checker and instant quote calculator.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
     color: '#2563EB',
+    href: '/keymaster-24',
   },
   {
     id: 'flowright-plumbing',
